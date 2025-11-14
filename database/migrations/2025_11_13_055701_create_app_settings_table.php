@@ -29,6 +29,8 @@ return new class extends Migration
             $table->string('contact_number')->nullable();
             $table->string('help_support_url')->nullable();
             $table->string('notification_settings')->nullable();
+            $table->string('backup_type')->nullable();
+            $table->string('backup_email')->nullable();
             $table->timestamps();
         });
     }
