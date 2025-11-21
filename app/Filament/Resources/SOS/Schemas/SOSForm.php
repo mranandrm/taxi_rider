@@ -28,15 +28,15 @@ class SOSForm
     ])
     ->default('active')
     ->required(),
-                Select::make('added_by')
-    ->multiple()
-    ->preload()
-    ->label('Added By')
-    ->options(
-        User::role('rider') 
-            ->pluck('name', 'id')
-            ->toArray()
-    ),
+    //             Select::make('added_by')
+    // ->multiple()
+    // ->preload()
+    // ->label('Added By')
+    // ->options(
+    //     User::role('rider') 
+    //         ->pluck('name', 'id')
+    // ),
+    TextInput::make('added_by')
 
             ]);
     }
