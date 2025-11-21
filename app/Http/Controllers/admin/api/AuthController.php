@@ -84,7 +84,7 @@ class AuthController extends Controller
                 'name' => 'sometimes|string|max:255',
                 'email' => 'sometimes|email|unique:users,email,' . $user->id,
                 'password' => 'nullable|string|min:6',
-                'device_name' => 'required|string',
+               
             ]);
 
             $data = [];
