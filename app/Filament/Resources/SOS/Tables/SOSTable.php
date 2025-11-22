@@ -15,7 +15,7 @@ class SOSTable
     {
         return $table
             ->columns([
-                TextColumn::make('region_id')
+                TextColumn::make('region.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('title')
@@ -25,7 +25,7 @@ class SOSTable
                 TextColumn::make('status')
                     ->numeric()
                     ->sortable(),
-                TextColumn::make('added_by')
+                TextColumn::make('user.name')
                     ->numeric()
                     ->sortable(),
                 TextColumn::make('created_at')

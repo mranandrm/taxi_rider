@@ -14,11 +14,12 @@ return new class extends Migration
         Schema::create('s_o_s', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('region_id')->nullable();
-            $table->string('title')->nullable();
-            $table->string('contact_number')->nullable();
+            $table->string('title');
+            $table->string('contact_number');
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->unsignedBigInteger('added_by')->nullable();
             $table->foreign('region_id')->references('id')->on('regions')->onDelete('cascade');
+            $table->foreign('added_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

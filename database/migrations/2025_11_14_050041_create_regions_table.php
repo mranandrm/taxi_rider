@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('distance_unit')->nullable()->default('km')->comment('km,mile'); 
             $table->json('coordinates')->nullable();
-           $table->enum('status', ['active', 'inactive'])->default('active');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->string('timezone')->nullable()->default('UTC');
             $table->timestamps();
         });

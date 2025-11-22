@@ -13,31 +13,31 @@ class SOSForm
     {
         return $schema
             ->components([
-            Select::make('region_id')
-                        ->multiple()
-                        ->preload()
-                        ->relationship('region', 'name'),
-                TextInput::make('title')
-                    ->default(null),
-                TextInput::make('contact_number')
-                    ->default(null),
-                Select::make('status')
+         Select::make('region_id')
+    ->preload()
+    ->relationship('region', 'name')
+    ->required(),
+
+TextInput::make('title')->nullable(),
+
+TextInput::make('contact_number')->nullable(),
+
+Select::make('status')
     ->options([
         'active' => 'Active',
         'inactive' => 'Inactive',
     ])
     ->default('active')
     ->required(),
-    //             Select::make('added_by')
-    // ->multiple()
-    // ->preload()
-    // ->label('Added By')
-    // ->options(
-    //     User::role('rider') 
-    //         ->pluck('name', 'id')
-    // ),
-    TextInput::make('added_by')
 
+Select::make('added_by')
+    ->label('Added By')
+    ->options(
+        User::role('rider')->pluck('name', 'id')
+    )
+    ->required(),
+
+    
             ]);
     }
 }
